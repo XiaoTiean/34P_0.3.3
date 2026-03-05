@@ -19,3 +19,8 @@ DDEFS += -DEFI_WIDEBAND_FIRMWARE_UPDATE=FALSE
 
 #see main repo for details on this any many other optional subsystems. We have too many, one has to choose what fits into his choice of stm32
 #DDEFS += -DEFI_ONBOARD_MEMS=TRUE
+
+# User can configure LIN/K-line interface
+DDEFS += -DEFI_KLINE=TRUE
+DDEFS += -DKLINE_SERIAL_DEVICE_RX=C11 -DKLINE_SERIAL_DEVICE_TX=C10
+DDEFS += -DKLINE_SERIAL_DEVICE=SD3
