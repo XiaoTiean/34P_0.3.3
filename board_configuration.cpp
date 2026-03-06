@@ -42,6 +42,11 @@ static void customBoardDefaultConfiguration() {
 
 	// Battery sense on PA0
 //	engineConfiguration->vbattAdcChannel = EFI_ADC_0;
+
+    engineConfiguration->enableKline = true;
+    engineConfiguration->kLineBaudRate = 10400;
+	engineConfiguration->hondaK = false;
+	engineConfiguration->verboseKLine = false;
 }
 
 void setup_custom_board_overrides() {
