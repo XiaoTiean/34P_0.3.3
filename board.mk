@@ -9,6 +9,8 @@ include $(BOARD_DIR)/meta-info.env
 # this would save some flash while being unable to update WBO controller firmware
 DDEFS += -DEFI_WIDEBAND_FIRMWARE_UPDATE=FALSE
 
+DDEFS += -DEFI_UNIT_TEST=0 -DEFI_PROD_CODE=1 -DEFI_SIMULATOR=0
+
 # assign critical LED to a non-existent pin if you do not have it on your board
 # good old PD14 is still the default value
 # DDEFS += -DLED_CRITICAL_ERROR_BRAIN_PIN=Gpio::I15
