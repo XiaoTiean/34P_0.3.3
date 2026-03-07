@@ -43,10 +43,31 @@ static void customBoardDefaultConfiguration() {
 	// Battery sense on PA0
 //	engineConfiguration->vbattAdcChannel = EFI_ADC_0;
 
-    engineConfiguration->enableKline = true;
+    engineConfiguration->enableKline = false;
     engineConfiguration->kLineBaudRate = 10400;
 	engineConfiguration->hondaK = false;
 	engineConfiguration->verboseKLine = false;
+
+#if EFI_PROD_CODE
+    efiSetPadMode("K-Line UART RX", Gpio::KLINE_SERIAL_DEVICE_RX, PAL_MODE_ALTERNATE(TS_SERIAL_AF));
+    efiSetPadMode("K-Line UART TX", Gpio::KLINE_SERIAL_DEVICE_TX, PAL_MODE_ALTERNATE(TS_SERIAL_AF));
+#endif /* EFI_PROD_CODE */
+ 
+    static SerialConfig cfg = {
+        #if EFI_PROD_CODE
+            .speed = 0,
+            .cr1 = 0,
+            .cr2 = USART_CR2_STOP1_BITS | USART_CR2_LINEN,
+            .cr3 = 0,
+        #endif // EFI_PROD_CODE
+    };
+ 
+    if (engineConfiguration->kLineBaudRate < 100)
+        engineConfiguration->kLineBaudRate = KLINE_BAUD_RATE;
+    cfg.speed = engineConfiguration->kLineBaudRate;
+ 
+    sdStart(klDriver, &cfg);
+#endif // EFI_KLINE
 }
 
 void setup_custom_board_overrides() {
