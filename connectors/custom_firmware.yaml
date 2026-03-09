@@ -1,12 +1,24 @@
 pins:
-  - id: B14
+  - id: E13
     class: outputs
-    ts_name: B14 Output
+    ts_name: LSHC_1
+
+  - id: E14
+    class: outputs
+    ts_name: LSHC_2
+
+  - id: E15
+   class: outputs
+   ts_name: LSHC_3
+
+   - id: B10
+   class: outputs
+   ts_name: LSHC_4
 
   - id: EFI_ADC_0
     class: analog_inputs
 # getAdcChannelBrainPin in 'stm32_adc.cpp' says EFI_ADC_0 is PA0
-    ts_name: On-board Battery Sense (A0)
+    ts_name: Analog Inputs 0 (A0)
 
   - id: EFI_ADC_1
     class: analog_inputs
@@ -22,7 +34,7 @@ pins:
 
   - id: EFI_ADC_4
     class: analog_inputs
-    ts_name: Analog Inputs 4 (A4)
+    ts_name: On-board Battery Sense (A4)
 
   - id: EFI_ADC_5
     class: analog_inputs
@@ -38,7 +50,7 @@ pins:
 
   - id: EFI_ADC_8
     class: analog_inputs
-    ts_name: On-board BARO (B0)
+    ts_name: Analog Inputs 8 (B0)
 
   - id: EFI_ADC_9
     class: analog_inputs
@@ -50,11 +62,11 @@ pins:
 
   - id: EFI_ADC_11
     class: analog_inputs
-    ts_name: Primary On-board O2 (C1)
+    ts_name: Analog Inputs 11 (C1)
 
   - id: EFI_ADC_12
     class: analog_inputs
-    ts_name: Secondary On-board O2 (C2)
+    ts_name: Analog Inputs 12 (C2)
 
   - id: EFI_ADC_13
     class: analog_inputs
@@ -68,14 +80,34 @@ pins:
     class: analog_inputs
     ts_name: Analog Inputs 15 (C5)
 
-  - id: [E2, E2]
+  - id: [D13, D13]
     class: [switch_inputs, event_inputs]
-    ts_name: VR/Hall 1 (E2)
+    ts_name: I/O 1 (D13)
+  
+  - id: [D12, D12]
+    class: [switch_inputs, event_inputs]
+    ts_name: I/O 2 (D12)
+  
+  - id: [B15, B15]
+    class: [switch_inputs, event_inputs]
+    ts_name: I/O 3 (B15)
+  
+  - id: [B14, B14]
+    class: [switch_inputs, event_inputs]
+    ts_name: I/O 4 (B14)
 
-  - id: [E3, E3]
+  - id: [B10, B10]
     class: [switch_inputs, event_inputs]
-    ts_name: VR/Hall 2 (E3)
+    ts_name: I/O 5 (B10)
 
-  - id: [E4, E4]
+  - id: [B11, B11]
     class: [switch_inputs, event_inputs]
-    ts_name: VR/Hall 3 (E4)
+    ts_name: I/O 6 (B11)
+
+  - id: [B1, B1]
+    class: [switch_inputs, event_inputs]
+    ts_name: VR 1 (B1)
+
+  - id: [B0, B0]
+    class: [switch_inputs, event_inputs]
+    ts_name: VR 2 (B0)
