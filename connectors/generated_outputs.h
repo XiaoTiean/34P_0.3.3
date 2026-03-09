@@ -4,6 +4,20 @@
 #pragma once
 
 Gpio GENERATED_OUTPUTS[] = {
-	Gpio::B14, // B14 Output
-// "B14 Output",
+	Gpio::E10, // LSHC_1
+	Gpio::E9, // LSHC_2
+	Gpio::E8, // LSHC_3
+	Gpio::E7, // LSHC_4
+	Gpio::E12, // HSLC_1
+	Gpio::E11, // HSLC_2
+	Gpio::E14, // HSLC_3
+	Gpio::B13, // HSLC_4
+// "LSHC_1",
+// "LSHC_2",
+// "LSHC_3",
+// "LSHC_4",
+// "HSLC_1",
+// "HSLC_2",
+// "HSLC_3",
+// "HSLC_4",
 }
