@@ -8,12 +8,12 @@ pins:
     ts_name: LSHC_2
 
   - id: E8
-   class: outputs
-   ts_name: LSHC_3
+    class: outputs
+    ts_name: LSHC_3
 
-   - id: E7
-   class: outputs
-   ts_name: LSHC_4
+  - id: E7
+    class: outputs
+    ts_name: LSHC_4
 
   - id: E12
     class: outputs
@@ -24,12 +24,12 @@ pins:
     ts_name: HSLC_2
 
   - id: E14
-   class: outputs
-   ts_name: HSLC_3
+    class: outputs
+    ts_name: HSLC_3
 
-   - id: B13
-   class: outputs
-   ts_name: HSLC_4
+  - id: B13
+    class: outputs
+    ts_name: HSLC_4
 
   - id: EFI_ADC_0
     class: analog_inputs
